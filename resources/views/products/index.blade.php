@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->amount }}</td>
-                    <td>${{ $product->price / 100}}</td>
+                    <td>${{ $product->price }}</td>
                 </tr>
             @endforeach
         </tbody>

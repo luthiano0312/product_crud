@@ -26,6 +26,12 @@
                     <td>${{ $product->price }}</td>
                     <td>
                         <a href="{{ route('products.edit', $product->id) }}">editar</a>
+                        <form action="{{ route('products.destroy', $product->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+
+                            <input type="submit" value="excluir">
+                        </form>
                     </td>
                 </tr>
             @endforeach

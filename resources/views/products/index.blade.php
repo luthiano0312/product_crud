@@ -18,11 +18,13 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td>teste</td>
-                <td>teste</td>
-                <td>teste</td>
-            </tr>
+            @foreach( $products as $product)
+                <tr>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->amount }}</td>
+                    <td>${{ $product->price / 100}}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </body>

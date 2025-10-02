@@ -27,5 +27,7 @@
             @endforeach
         </tbody>
     </table>
+
+    <a href="{{ route('products.create') }}">cadastrar</a>
 </body>
 </html>

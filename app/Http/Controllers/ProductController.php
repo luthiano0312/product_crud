@@ -46,7 +46,8 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view("products.edit", compact("product"));
     }
 
     /**
@@ -54,7 +55,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
+        return redirect()->route("products.index");
     }
 
     /**

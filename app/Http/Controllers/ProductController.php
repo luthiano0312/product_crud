@@ -29,8 +29,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
-        return redirect()->route("products.index");
+        $created = Product::create($request->all());
+
+        if ($created) {
+            return redirect()->route("products.index")->with("success","cadastrado com sucesso");
+        }
+        
+        return redirect()->route("products.create")->with("error","erro ao cadastrar");
+
     }
 
     /**

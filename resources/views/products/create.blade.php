@@ -8,6 +8,12 @@
 <body>
     <h1>Cadastro de produtos</h1>
 
+    @if (session('error'))
+        <div>
+            {{ session('error') }}
+        </div>
+    @endif
+
     <form action="{{ route('products.store') }}" method="post">
         @csrf
 

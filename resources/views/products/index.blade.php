@@ -8,6 +8,12 @@
 <body>
     <h1>Produtos</h1>
     
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <table>
         <thead>
             <tr>

@@ -62,8 +62,14 @@ class ProductController extends Controller
     public function update(Request $request, string $id)
     {
         $product = Product::findOrFail($id);
-        $product->update($request->all());
-        return redirect()->route("products.index");
+        $updated = $product->update($request->all());
+
+        if ($updated) {
+            return redirect()->route("products.index")->with("success","atualizado com sucesso");
+        }
+        
+        return redirect()->route("products.edit")->with("error","erro ao atualizar");
+        
     }
 
     /**

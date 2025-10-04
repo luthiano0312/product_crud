@@ -8,6 +8,12 @@
 <body>
     <h1>edição de produtos</h1>
 
+    @if (session('error'))
+        <div>
+            {{ session('error') }}
+        </div>
+    @endif
+
     <form action="{{ route('products.update', $product->id) }}" method="post">
         @csrf
         @method('put')

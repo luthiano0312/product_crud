@@ -36,7 +36,7 @@
                 <td class="td" id="action">
                     <a href="{{ route('products.edit', $product->id) }}" id="editButton">Editar</a>
 
-                    <form action="{{ route('products.destroy', $product->id) }}" method="post">
+                    <form action="{{ route('products.destroy', $product->id) }}" method="post" onsubmit="return confirm('tem certeza que deseja excluir?')">
                         @csrf
                         @method('delete')
 

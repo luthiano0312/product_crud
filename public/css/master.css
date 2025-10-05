@@ -1,0 +1,212 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "montserrat";
+}
+
+#body {
+    display: flex;
+    flex-direction: column;   
+    background-color: rgb(231, 231, 231);
+}
+
+#header {
+    display: flex;
+    background-color: rgb(26, 26, 136);
+    height: 10vh;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+
+#headerTitle {
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    font-size: 2.5vh;
+}
+
+.headerContainer {
+    width: 30vw;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    height: 90vh;
+    width: 100vw;
+}
+
+#buttonAndMessage {
+    display: flex;
+    justify-content: end;
+    gap: 2vw;
+    height: 8vh;
+    width: 70vw;
+}
+
+#message {
+    display: flex;
+    align-items: center;
+    width: 60vw;
+    background-color: rgb(0, 255, 128);
+    border-radius: 3vh;
+    font-weight: 500;
+    font-size: 2.25vh;
+    padding: 1vw;
+}
+/* --------------------------------------------------------------------------------------------- */ 
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 195, 255);
+    width: 8vw;
+    border-radius: 3vh;
+    font-size: 2.25vh;
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(6, 4, 116);
+}
+
+#button:hover {
+    background-color: rgb(0, 15, 151);
+    color: white;
+}
+
+#table {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 70vw;
+}
+
+#thead {
+    background-color: rgb(24, 64, 173);
+    color: white;
+    height: 6vh;
+}
+
+#tbody {
+    font-weight: 500;
+}
+
+.th, .td {
+    padding: 10px;
+    text-align: left;
+}
+
+.tr {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+#action {
+    height: 6.5vh;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    gap: 2vw;
+    width: 5vw;
+}
+
+#editButton {
+    color: rgb(6, 0, 97);
+    text-decoration: none;
+    font-size: 2vh;
+}
+
+#editButton:hover {
+    color: rgb(0, 195, 255);
+    text-decoration: underline;
+}
+
+#deleteButton {
+    background-color: transparent;
+    color: rgb(255, 0, 0);
+    border: none;
+    font-size: 2vh;
+    font-weight: 500;
+}
+
+#deleteButton:hover {
+    color: rgb(172, 0, 0);
+    text-decoration: underline;
+}
+/* --------------------------------------------------------------------------------------------- */
+#formCreate {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 20vw;
+    height: 50vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh;
+    border-radius: 2.5vh;
+}
+
+#formTitle {
+    color: rgb(6, 0, 97);
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* gap: 10px; */
+}
+
+.input {
+    height: 4vh;
+    padding-left: 10px;
+    font-size: 2vh;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.input:focus {
+    outline: none;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#cancelContainer {
+    width: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cancel {
+    color: rgb(6, 0, 97);
+    text-decoration: none;
+    font-size: 2vh;
+}
+#cancel:hover {
+    color: rgb(10, 0, 155);
+    text-decoration: underline;
+}
+
+#create {
+    width: 7vw;
+    height: 5vh;
+    font-size: 2vh;
+    font-weight: 500;
+    color: white;
+    border-radius: 2vh;
+    border: none;
+    background-color: rgb(6, 0, 97);
+}
+
+#create:hover {
+    background-color: rgb(0, 4, 255);
+}

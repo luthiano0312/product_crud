@@ -1,49 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produtos</title>
-</head>
-<body>
-    <h1>Produtos</h1>
-    
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+@extends('layouts.app')
 
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Quantidade</th>
-                <th>Preço</th>
-                <th>ações</th>
+@section('title', 'produtos')
+
+@section('headerTitle', 'Listagem de produtos')
+
+@section('content')
+    <div id="buttonAndMessage">
+        @if (session('success'))
+            <div id="message">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <a href="{{ route('products.create') }}" id="button">cadastrar</a>
+    </div>
+
+    <table id="table">
+        <thead id="thead">
+            <tr class="tr">
+                <th class="td">ID</th>
+                <th class="td">Nome</th>
+                <th class="td">Quantidade</th>
+                <th class="td">Preço</th>
+                <th class="td">Ação</th>
             </tr>
         </thead>
 
-        <tbody>
+        <tbody id="tbody">
             @foreach( $products as $product)
-                <tr>
-                    <td>{{ $product->name }}</td>
-                    <td>{{ $product->amount }}</td>
-                    <td>${{ $product->price }}</td>
-                    <td>
-                        <a href="{{ route('products.edit', $product->id) }}">editar</a>
-                        <form action="{{ route('products.destroy', $product->id) }}" method="post">
-                            @csrf
-                            @method('delete')
+            <tr class="tr">
+                <td class="td">{{ $product->id }}</td>
+                <td class="td">{{ $product->name }}</td>
+                <td class="td">{{ $product->amount }}</td>
+                <td class="td">${{ $product->price }}</td>
+                <td class="td" id="action">
+                    <a href="{{ route('products.edit', $product->id) }}" id="editButton">Editar</a>
 
-                            <input type="submit" value="excluir">
-                        </form>
-                    </td>
-                </tr>
+                    <form action="{{ route('products.destroy', $product->id) }}" method="post">
+                        @csrf
+                        @method('delete')
+
+                        <input type="submit" value="Excluir" id="deleteButton">
+                    </form>                
+                </td>
+            </tr>
             @endforeach
         </tbody>
     </table>
-
-    <a href="{{ route('products.create') }}">cadastrar</a>
-</body>
-</html>
+@endsection

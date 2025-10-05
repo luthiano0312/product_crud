@@ -1,32 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cadastro</title>
-</head>
-<body>
-    <h1>Cadastro de produtos</h1>
+@extends('layouts.app')
+
+@section('title', 'cadastro')
+
+@section('headerTitle', 'Cadastro de produtos')
+
+@section('content')
 
     @if (session('error'))
-        <div>
+        <div id="errorMessage">
             {{ session('error') }}
         </div>
     @endif
 
-    <form action="{{ route('products.store') }}" method="post">
-        @csrf
+    <form action="{{ route('products.store') }}" method="post" id="formCreate">
+        @csrf   
 
-        <label for="name">Nome: </label>
-        <input type="text" name="name">
+        <h1 id="formTitle">Cadastrar</h1>
 
-        <label for="amount">Quantidade: </label>
-        <input type="text" name="amount">
+        <div class="formContainer">
+            <label for="name">Nome: </label>
+            <input type="text" name="name" class="input">
+        </div>
 
-        <label for="price">Preço: </label>
-        <input type="text" name="price">
+        <div class="formContainer">
+            <label for="amount">Quantidade: </label>
+            <input type="number" name="amount" class="input">
+        </div>
 
-        <input type="submit" valeu="cadastrar">
+        <div class="formContainer">
+            <label for="price">Preço: </label>
+            <input type="number" name="price" class="input">
+        </div>
+
+        <div id="buttonContainer">
+            <div id="cancelContainer">
+                <a href="{{ route('products.index') }}" id="cancel">Cancelar</a>
+            </div>
+
+            <input type="submit" value="Cadastrar" id="create">
+        </div>
     </form>
-</body>
-</html>
+    
+@endsection
